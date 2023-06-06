@@ -37,7 +37,7 @@ else
     distro="${2:-$(lsb_release -i|cut -f 2)}"
     distro_version="${2:-$(lsb_release -r|cut -f 2|cut -c1-2)}"
 fi
-REQUIRED_UTILS="wget tar"
+REQUIRED_UTILS="wget tar python"
 APTCMD="apt"
 APTGETCMD="apt-get"
 YUMCMD="yum"
@@ -115,8 +115,8 @@ function install_cramfstools
 
 function install_ubireader
 {
-    git clone --quiet --depth 1 --branch "master" https://github.com/jrspruitt/ubi_reader
-    (cd ubi_reader && $SUDO $PYTHON setup.py install)
+    git clone --quiet --depth 1 --branch "main" https://github.com/jrspruitt/ubi_reader
+    (cd ubi_reader && poetry install)
     $SUDO rm -rf ubi_reader
 }
 
