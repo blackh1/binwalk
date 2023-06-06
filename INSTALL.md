@@ -55,7 +55,7 @@ $ sudo apt-get install mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabex
 ```bash
 # Install sasquatch to extract non-standard SquashFS images
 $ sudo apt-get install zlib1g-dev liblzma-dev liblzo2-dev
-$ git clone https://github.com/devttys0/sasquatch
+$ git clone --quiet --depth 1 --branch "master" https://github.com/threadexio/sasquatch
 $ (cd sasquatch && ./build.sh)
 ```
 
